@@ -1,26 +1,134 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-surface text-text;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+  
+  /* Loading spinner */
+  .spinner {
+    @apply animate-spin rounded-full border-2 border-gray-300 border-t-brand-primary;
+  }
+  
+  /* Skeleton loading */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+  
+  /* Form validation states */
+  .form-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500;
+  }
+  
+  .form-success {
+    @apply border-green-500 focus:border-green-500 focus:ring-green-500;
+  }
+  
+  /* Button states */
+  .btn-primary {
+    @apply bg-brand-primary hover:bg-blue-600 focus:ring-brand-primary text-white font-medium;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 hover:bg-gray-50 focus:ring-brand-primary text-text;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-gray-100 focus:ring-brand-primary text-text;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-gray-100;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-card-hover transition-shadow duration-200;
+  }
+  
+  /* Input styles */
+  .input-base {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-text placeholder-text-muted;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent;
+    @apply disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed;
+    @apply transition-colors duration-200;
+  }
+  
+  .input-error {
+    @apply border-red-500 focus:ring-red-500 focus:border-red-500;
+  }
+  
+  .input-success {
+    @apply border-green-500 focus:ring-green-500 focus:border-green-500;
+  }
+  
+  /* Label styles */
+  .label-base {
+    @apply block text-sm font-medium text-text mb-2;
+  }
+  
+  .label-error {
+    @apply text-red-600;
+  }
+  
+  /* Error text */
+  .error-text {
+    @apply text-sm text-red-600 mt-1;
+  }
+  
+  /* Helper text */
+  .helper-text {
+    @apply text-sm text-text-muted mt-1;
+  }
+  
+  /* Link styles */
+  .link-primary {
+    @apply text-brand-primary hover:text-blue-600 font-medium transition-colors duration-200;
+  }
+  
+  .link-muted {
+    @apply text-text-muted hover:text-text transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities */
+  .text-balance {
+    word-wrap: break-word;
+  }
+  
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

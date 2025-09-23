@@ -1,112 +1,179 @@
-# Batika Project
+# Batika - Platform Ekspor UMKM Batik
 
-## 📁 Struktur Folder
+Platform ekspor untuk UMKM batik Indonesia dengan akses ke dashboard dan katalog global.
 
-Berikut adalah struktur folder lengkap dari project Batika:
+## 🎨 Design System
 
-```
-batika/
-├── public/                     # File static (gambar, icon, dll)
-│   ├── file.svg
-│   ├── globe.svg
-│   ├── next.svg
-│   ├── vercel.svg
-│   └── window.svg
-├── src/                        # Kode sumber utama
-│   ├── app/                    # Next.js App Router
-│   │   ├── (dashboard)/        # Halaman dashboard (perlu login)
-│   │   │   ├── profile/        # Halaman profil user
-│   │   │   ├── settings/       # Halaman pengaturan
-│   │   │   └── transactions/   # Halaman transaksi
-│   │   ├── (marketing)/        # Halaman marketing (publik)
-│   │   │   ├── about/          # Halaman tentang kami
-│   │   │   ├── contact/        # Halaman kontak
-│   │   │   └── pricing/        # Halaman harga
-│   │   ├── auth/               # Halaman autentikasi
-│   │   │   ├── signin/         # Halaman login
-│   │   │   ├── signup/         # Halaman daftar
-│   │   │   └── reset-password/ # Halaman reset password
-│   │   ├── api/                # Endpoint API
-│   │   │   ├── auth/           # API autentikasi
-│   │   │   │   ├── signin/     # POST /api/auth/signin
-│   │   │   │   ├── signup/     # POST /api/auth/signup
-│   │   │   │   ├── signout/    # POST /api/auth/signout
-│   │   │   │   └── refresh/    # POST /api/auth/refresh
-│   │   │   ├── users/          # API manajemen user
-│   │   │   │   └── [id]/       # GET, PUT, DELETE /api/users/[id]
-│   │   │   └── transactions/   # API transaksi
-│   │   │       └── [id]/       # GET, PUT, DELETE /api/transactions/[id]
-│   │   ├── globals.css         # Style global
-│   │   ├── layout.tsx          # Layout utama
-│   │   ├── page.tsx            # Halaman utama
-│   │   ├── loading.tsx         # UI loading
-│   │   ├── error.tsx           # UI error
-│   │   ├── not-found.tsx       # Halaman 404
-│   │   └── favicon.ico         # Icon aplikasi
-│   ├── components/             # Komponen UI global
-│   │   ├── layout/             # Komponen layout
-│   │   │   ├── Navbar.tsx      # Navigasi atas
-│   │   │   └── Footer.tsx      # Footer bawah
-│   │   ├── ui/                 # Komponen UI yang bisa dipakai ulang
-│   │   │   ├── Button.tsx      # Komponen tombol
-│   │   │   ├── Input.tsx       # Komponen input
-│   │   │   └── Card.tsx        # Komponen kartu
-│   │   └── forms/              # Komponen form
-│   │       ├── LoginForm.tsx   # Form login
-│   │       └── RegisterForm.tsx # Form daftar
-│   ├── features/               # Modul fitur (arsitektur berbasis fitur)
-│   │   ├── auth/               # Fitur autentikasi
-│   │   │   ├── schemas/        # Schema validasi
-│   │   │   ├── services/       # Panggilan API & logika bisnis
-│   │   │   └── ui/             # Komponen khusus fitur
-│   │   ├── users/              # Fitur user
-│   │   │   ├── schemas/        # Schema validasi user
-│   │   │   ├── services/       # Service API user
-│   │   │   └── ui/             # Komponen user
-│   │   └── transactions/       # Fitur transaksi
-│   │       ├── schemas/        # Schema validasi transaksi
-│   │       ├── services/       # Service API transaksi
-│   │       └── ui/             # Komponen transaksi
-│   └── lib/                    # Library TypeScript global
-│       ├── api/                # Client API & service
-│       ├── constants/          # Konstanta aplikasi
-│       ├── hooks/              # Custom React hooks
-│       ├── types/              # Definisi tipe TypeScript
-│       ├── utils/              # Fungsi utility
-│       └── validations/        # Schema validasi form
-├── styles/                     # Style global
-│   └── globals.css             # Tailwind CSS dengan variabel custom
-├── next.config.ts              # Konfigurasi Next.js
-├── package.json                # Dependensi dan script
-├── postcss.config.mjs          # Konfigurasi PostCSS
-├── tailwind.config.ts          # Konfigurasi Tailwind CSS
-├── tsconfig.json               # Konfigurasi TypeScript
-└── README.md                   # Dokumentasi project
+### Brand Colors
+- **Primary**: #68B4F6 (Biru)
+- **Accent**: #D4AF37 (Emas)
+- **Surface**: #F5F5F5 (Abu terang)
+- **Text**: #0F172A (Slate-900)
+- **Text Muted**: #475569 (Slate-600)
+
+### Typography
+- **Font**: Poppins (Google Fonts)
+- **Weights**: 300, 400, 500, 600, 700
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm atau yarn
+
+### Installation
+
+1. Clone repository
+```bash
+git clone <repository-url>
+cd batika
 ```
 
-## 📋 Penjelasan Folder
+2. Install dependencies
+```bash
+npm install
+```
 
-### **src/app/** - Next.js App Router
-- **`(dashboard)/`** - Halaman yang memerlukan login
-- **`(marketing)/`** - Halaman publik untuk marketing
-- **`auth/`** - Halaman login, daftar, reset password
-- **`api/`** - Endpoint API untuk backend
+3. Run development server
+```bash
+npm run dev
+```
 
-### **src/components/** - Komponen UI Global
-- **`layout/`** - Komponen layout (Navbar, Footer)
-- **`ui/`** - Komponen UI yang bisa dipakai ulang
-- **`forms/`** - Komponen form
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-### **src/features/** - Modul Fitur
-Setiap fitur berisi:
-- **`schemas/`** - Schema validasi data
-- **`services/`** - Panggilan API dan logika bisnis
-- **`ui/`** - Komponen React khusus fitur
+## 📁 Project Structure
 
-### **src/lib/** - Library Global
-- **`api/`** - Konfigurasi client API
-- **`types/`** - Definisi tipe TypeScript
-- **`hooks/`** - Custom React hooks
-- **`utils/`** - Fungsi utility
-- **`constants/`** - Konstanta aplikasi
-- **`validations/`** - Schema validasi form
+```
+src/
+├── app/
+│   ├── (auth)/
+│   │   ├── login/
+│   │   │   └── page.tsx
+│   │   └── register/
+│   │       └── page.tsx
+│   ├── globals.css
+│   └── layout.tsx
+├── components/
+│   └── ui/
+│       ├── AuthCard.tsx
+│       ├── Button.tsx
+│       ├── FormHint.tsx
+│       ├── OAuthButtons.tsx
+│       ├── PasswordField.tsx
+│       ├── Separator.tsx
+│       └── TextField.tsx
+└── lib/
+    └── utils.ts
+```
+
+## 🎯 Features
+
+### Authentication Pages
+- **Login Page** (`/login`)
+  - Email & password authentication
+  - OAuth integration (Google, GitHub)
+  - Remember me functionality
+  - Forgot password link
+  - Form validation with Zod
+
+- **Register Page** (`/register`)
+  - Full registration form
+  - Password strength meter
+  - Terms & conditions acceptance
+  - OAuth registration
+  - Real-time validation
+
+### UI Components
+
+#### AuthCard
+- Clean, Supabase-style card design
+- Responsive layout
+- Smooth animations
+
+#### Form Components
+- **TextField**: Input dengan label, error states, icons
+- **PasswordField**: Password input dengan show/hide toggle & strength meter
+- **Button**: Multiple variants (primary, outline, ghost) dengan loading states
+- **OAuthButtons**: Google & GitHub authentication buttons
+- **FormHint**: Helper text dengan multiple types (info, success, warning, error)
+- **Separator**: Divider dengan optional text
+
+### Accessibility Features
+- ✅ Proper ARIA labels and descriptions
+- ✅ Focus management and keyboard navigation
+- ✅ Screen reader support
+- ✅ High contrast focus rings
+- ✅ Minimum 44px tap targets
+- ✅ Semantic HTML structure
+
+### Responsive Design
+- ✅ Mobile-first approach
+- ✅ Breakpoints: sm (640px), md (768px), lg (1024px)
+- ✅ Touch-friendly interface
+- ✅ Optimized for all screen sizes
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **Forms**: React Hook Form + Zod validation
+- **Icons**: Lucide React
+- **Font**: Poppins (Google Fonts)
+- **TypeScript**: Full type safety
+
+## 📱 Pages
+
+### Login Page (`/login`)
+- Clean sign-in interface
+- Email/password authentication
+- OAuth options
+- Remember me checkbox
+- Forgot password link
+
+### Register Page (`/register`)
+- Complete registration form
+- Real-time password validation
+- Terms acceptance
+- OAuth registration options
+
+## 🎨 Design Principles
+
+1. **Clean & Minimal**: Supabase-inspired design
+2. **Accessible**: WCAG 2.1 AA compliant
+3. **Responsive**: Mobile-first approach
+4. **Consistent**: Design system with reusable components
+5. **Professional**: Business-focused tone and copy
+
+## 🔧 Development
+
+### Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run type-check   # Run TypeScript checks
+```
+
+### Code Style
+- ESLint configuration
+- Prettier formatting
+- TypeScript strict mode
+- Consistent naming conventions
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📞 Support
+
+For support, email support@batikglobal.com or join our Discord community.
