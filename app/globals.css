@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-contrast-color: #000000;
+  --color-primary-color: #ffffff;
+  --color-background-color: #f5f5f5;
+
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@layer base {
+  .font-outline-sans {
+    -webkit-text-stroke: 1px black;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 0.1px black;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 1.5px black;
+  }
+
+  .scale-115 {
+  --tw-scale-x: 115%;
+  --tw-scale-y: 115%;
+  --tw-scale-z: 115%;
+  scale: var(--tw-scale-x) var(--tw-scale-y);
+}
+}
